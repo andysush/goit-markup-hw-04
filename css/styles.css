@@ -8,6 +8,7 @@
   --white-color: #ffffff;
   --button-active-color: #188ce8;
   --black-color: #000000;
+  --icons-background-color: #afb1b8;
 }
 
 /* reset start */
@@ -46,41 +47,34 @@ body {
   color: var(--third-text-color);
 }
 
-  .container {
-    width: 1200px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  
-    /* outline: 2px solid red;
+.container {
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* outline: 2px solid red;
     outline-offset: -2px; */
-} 
+}
 
 /* HEADER */
 
 .header-container {
- display: flex;
- justify-content: space-between;
- align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-container {
   display: flex;
   align-items: baseline;
-
-  
 }
 .navigation-list {
   display: flex;
   align-items: center;
   gap: 50px;
 }
-/* Якщо геп ще не можна;) */
-
-/* .navigation-list:not(:last-child) {
-  margin-right: 50px;
-} */
 
 .logo {
   display: inline-block;
@@ -112,6 +106,10 @@ body {
 }
 
 .contact-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   font-weight: 500;
   font-size: 14px;
   line-height: calc(16 / 14);
@@ -120,8 +118,12 @@ body {
   color: var(--primary-text-color);
 }
 
+.header-icon {
+  fill: currentColor;
+}
+
 .header {
-  border-bottom: 1px solid #ECECEC;
+  border-bottom: 1px solid #ececec;
 }
 
 /* MAIN */
@@ -129,7 +131,15 @@ body {
 
 /* temp background: */
 .hero {
-  background-color: #2f303a;
+  max-width: 1600px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #C4C4C4;
+  background-image: linear-gradient( rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  url(../images/hero.jpg);
+  background-position: center;
+  
+  
   padding-top: 200px;
   padding-bottom: 200px;
 }
@@ -198,6 +208,16 @@ body {
   margin: -1px;
 }
 
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--secondary-background-color);
+  margin-bottom: 30px;
+}
+
 .specials-title {
   font-weight: 700;
   font-size: 14px;
@@ -219,7 +239,7 @@ body {
 /* CHIM */
 
 .chim-container {
-padding-bottom: 94px;
+  padding-bottom: 94px;
 }
 
 .section-title {
@@ -236,7 +256,7 @@ padding-bottom: 94px;
   display: flex;
   text-align: center;
   justify-content: space-between;
-  }
+}
 
 .chim-items:not(:last-child) {
   margin-right: 30px;
@@ -245,6 +265,8 @@ padding-bottom: 94px;
 /* TEAM */
 
 .section-team {
+  max-width: 1600px;
+  margin: 0 auto;
   background-color: var(--secondary-background-color);
   padding-top: 94px;
   padding-bottom: 94px;
@@ -263,24 +285,105 @@ padding-bottom: 94px;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
   margin-bottom: 10px;
-
 }
 
 .team-item {
   text-align: center;
-  background: #FFFFFF;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
 .team-text-item {
-padding: 30px 15px;
+  padding: 30px 15px;
+}
+
+.team-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-link-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+}
+
+.social-icon {
+  fill: var(--icons-background-color);
+}
+
+.team-link-item:hover .social-icon,
+.team-link-item:focus .social-icon {
+  fill: var(--white-color);
+  background-color: var(--third-text-color);
+}
+
+.team-link-item:hover,
+.team-link-item:focus {
+  background-color: var(--third-text-color);
+}
+
+.text-team {
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+  margin-bottom: 16px;
+}
+
+/* Postiyni Clienty */
+
+.clients-container {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.clients-list {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 30px;
+}
+
+.clients {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icons-background-color);
+  border-radius: 4px;
+}
+
+.clients-link-item {
+  fill:var(--icons-background-color);
+}
+
+.clients:hover .clients-link-item,
+.clients:focus .clients-link-item {
+  fill: var(--third-text-color);
+}
+
+.clients:hover,
+.clients:focus {
+  border-color:var(--third-text-color) 
 }
 
 /* FOOTER */
+.footer-main {
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: var(--third-background-color);
+}
 
 .footer-container {
-  background-color: var(--third-background-color);
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -292,6 +395,7 @@ padding: 30px 15px;
 .footer-stile {
   font-style: normal;
   margin-top: 20px;
+  margin-right: 70px;
 }
 
 .footer-address {
@@ -310,11 +414,43 @@ padding: 30px 15px;
   color: rgba(255, 255, 255, 0.6);
 }
 
+.footer-links .specials-title {
+  color: var(--white-color);
+}
+
+.footer-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-link-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);;
+}
+
+.footer-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-icon {
+  fill: var(--white-color);
+}
+
+.footer-link-item:hover,
+.footer-link-item:focus {
+  background-color: var(--third-text-color);
+}
+
 /* PORTFOLIO */
 
 .portfolio-container {
-padding-top: 94px;
-padding-bottom: 94px;
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 .btn-list {
@@ -324,7 +460,7 @@ padding-bottom: 94px;
   margin-bottom: 50px;
 }
 
-.btn-item:not(:last-child){
+.btn-item:not(:last-child) {
   margin-right: 8px;
 }
 
@@ -376,6 +512,6 @@ padding-bottom: 94px;
 
 .portfolio-item {
   padding: 20px 24px;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #eeeeee;
   border-top: none;
 }
